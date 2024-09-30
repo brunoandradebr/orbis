@@ -142,16 +142,18 @@ export const App = () => {
               Oceania
             </option>
           </select>
-          <select
-            className="bg-neutral-800 p-3 rounded-xl min-w-0"
-            onChange={(e) => setCurrentVoiceId(Number(e.target.value))}
-          >
-            {voices?.map((voice, id) => (
-              <option key={id} value={id} selected={currentVoiceId === id}>
-                {voice.voiceURI}
-              </option>
-            ))}
-          </select>
+          {voices?.length && (
+            <select
+              className="bg-neutral-800 p-3 rounded-xl min-w-0"
+              onChange={(e) => setCurrentVoiceId(Number(e.target.value))}
+            >
+              {voices?.map((voice, id) => (
+                <option key={id} value={id} selected={currentVoiceId === id}>
+                  {voice.voiceURI}
+                </option>
+              ))}
+            </select>
+          )}
         </div>
       </div>
 
