@@ -127,7 +127,7 @@ export const App = () => {
               Todos
             </option>
             <option key={2} value={'america'}>
-              America
+              América
             </option>
             <option key={3} value={'europe'}>
               Europa
@@ -147,7 +147,7 @@ export const App = () => {
             onChange={(e) => setCurrentVoiceId(Number(e.target.value))}
           >
             {voices?.map((voice, id) => (
-              <option key={id} value={id}>
+              <option key={id} value={id} selected={currentVoiceId === id}>
                 {voice.voiceURI}
               </option>
             ))}
